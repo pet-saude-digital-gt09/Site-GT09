@@ -26,8 +26,15 @@
 
 
     <nav>
-        <div class="container">
-            <ul>
+        <div class="container nav-container"> <!-- Adicionamos a classe 'nav-container' -->
+            
+            <!-- 1. O LOGO (link para a página inicial) -->
+            <a href="{{ url_for('main.index_route') }}" class="nav-logo">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo GT-09 EloEduc">
+            </a>
+
+            <!-- 2. O MENU DE NAVEGAÇÃO -->
+            <ul class="nav-menu"> <!-- Adicionamos a classe 'nav-menu' -->
                 <li><a href="{{ url_for('main.index_route') }}" 
                    class="{{ 'ativo' if active_page == 'index_route' else '' }}">Página Inicial</a></li>
                 

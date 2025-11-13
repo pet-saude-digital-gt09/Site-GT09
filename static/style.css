@@ -538,15 +538,15 @@ hr {
    O #4A308B é um roxo escuro, similar ao da sua imagem. */
 
 .social-link.twitter {
-    background-color: #4A308B; /* Roxo escuro */
+    background-color: #005691; /* Roxo escuro */
 }
 
 .social-link.instagram {
-    background-color: #4A308B; /* Roxo escuro */
+    background-color: #005691; /* Roxo escuro */
 }
 
 .social-link.github {
-    background-color: #4A308B; /* Roxo escuro */
+    background-color: #005691; /* Roxo escuro */
 }
 
 /* Se quiser cores específicas para cada rede, descomente e ajuste: */
@@ -561,3 +561,75 @@ hr {
     background-color: #333; 
 }
 */
+
+/* --- Estilos da Navegação com Logo --- */
+
+/* Container da Nav: 
+  Usamos flexbox para alinhar o logo (esquerda) e o menu (direita) 
+*/
+.nav-container {
+    display: flex;
+    justify-content: flex-end; /* Isso é o principal! */
+    align-items: center;
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    position: relative;
+
+    min-height: 70px;;
+}
+
+/* Estilo do Logo */
+
+.nav-logo {
+    position: absolute; /* Tiramos do fluxo normal */
+    top: -35px; 
+    left: 0;
+    z-index: 10;
+}
+
+.nav-logo img {
+    height: 120px; /* Ajuste esta altura como preferir */
+    width: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove qualquer espaço extra abaixo da imagem */
+}
+
+/* Ajuste no Menu (ul):
+  Removemos a centralização antiga e garantimos que ele se comporte bem no flex
+*/
+nav ul.nav-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    align-items: center;
+}
+
+/* --- Ajuste de Responsividade --- */
+
+@media (max-width: 768px) {
+    /* Em telas pequenas (como celulares), centralizamos
+      o logo e o menu quando eles quebram a linha.
+    */
+
+    .nav-logo {
+        position: static; /* Volta ao fluxo normal */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-logo img {
+        height: 100px; /* Reduz um pouco a altura no mobile */
+    }
+
+    .nav-container {
+        justify-content: center; /* Centraliza tudo no mobile */
+        gap: 1rem; /* Adiciona um espaço entre o logo e o menu */
+        position: static;
+    }
+
+    nav ul.nav-menu {
+        justify-content: center; /* Centraliza os itens de menu no mobile */
+        width: 100%;
+    }
+}
