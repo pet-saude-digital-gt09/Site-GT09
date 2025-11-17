@@ -1,27 +1,36 @@
-/* --- Variáveis CSS para Cores e Fontes --- */
+/* --- Variáveis CSS (REDESIGN) --- */
 :root {
-    --cor-principal: #005691; /* Azul Escuro SUS / Institucional */
-    --cor-secundaria: #007bff; /* Azul vibrante para botões e destaques */
-    --cor-fundo: #f8f9fa; /* Fundo levemente acinzentado */
-    --cor-texto-principal: #343a40; /* Preto quase total */
+    /* Nova Paleta de Cores - "Health Tech" */
+    --cor-principal: #005f73; /* Teal (verde-azulado) escuro, profissional */
+    --cor-secundaria: #0a9396; /* Teal vibrante para ações e links */
+    --cor-acento: #e9c46a; /* Amarelo-mostarda para detalhes */
+    
+    --cor-fundo: #ffffff; /* Fundo branco puro */
+    --cor-fundo-leve: #f8fbfb; /* Fundo sutil (quase branco) para seções */
+    
+    --cor-texto-principal: #2d3436; /* Preto suave */
+    --cor-texto-secundario: #636e72; /* Cinza para parágrafos */
+    --cor-texto-subtitulo: #a8c3c9; /* Cinza escuro para subtítulos */
     --cor-texto-claro: #ffffff;
-    --cor-borda: #dee2e6;
-    --cor-sombra: rgba(0, 0, 0, 0.08);
+    
+    --cor-borda: #e0e0e0; /* Borda bem clara */
+    --cor-sombra: rgba(99, 110, 114, 0.1); /* Sombra mais suave */
 
-    --fonte-titulos: 'Montserrat', sans-serif;
-    --fonte-textos: 'Open Sans', sans-serif;
+    /* Nova Tipografia */
+    --fonte-titulos: 'Poppins', sans-serif;
+    --fonte-textos: 'Inter', sans-serif;
 }
 
-/* --- Estilos Gerais --- */
+/* --- Estilos Gerais (REDESIGN) --- */
 body {
     font-family: var(--fonte-textos);
-    line-height: 1.7;
+    line-height: 1.8; /* Mais espaçado para 'Inter' */
     background-color: var(--cor-fundo);
-    color: var(--cor-texto-principal);
+    color: var(--cor-texto-secundario); /* Cor padrão é a de parágrafo */
     margin: 0;
     padding: 0;
-    -webkit-font-smoothing: antialiased; /* Suaviza a fonte em navegadores Webkit */
-    scroll-behavior: smooth; /* Rolagem suave ao clicar em âncoras */
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -33,18 +42,20 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--fonte-titulos);
-    color: var(--cor-principal);
+    color: var(--cor-texto-principal);
     margin-top: 1.5rem;
     margin-bottom: 1rem;
-    font-weight: 700; /* Bold */
+    font-weight: 600; /* Semibold por padrão */
+    line-height: 1.3;
 }
 
-h1 { font-size: 2.8rem; }
-h2 { font-size: 2.2rem; }
+h1 { font-size: 2.8rem; font-weight: 700; }
+h2 { font-size: 2.2rem; font-weight: 700; }
 h3 { font-size: 1.8rem; }
 
 p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--cor-texto-secundario);
 }
 
 a {
@@ -59,8 +70,8 @@ a:hover {
 
 .btn-principal, .btn-secundario {
     display: inline-block;
-    padding: 0.8rem 1.8rem;
-    border-radius: 50px; /* Botões arredondados */
+    padding: 0.9rem 2rem;
+    border-radius: 8px; /* Bordas mais suaves */
     font-weight: 600;
     text-align: center;
     transition: all 0.3s ease;
@@ -77,60 +88,50 @@ a:hover {
 }
 
 .btn-principal:hover {
-    background-color: #0069d9; /* Um pouco mais escuro */
-    transform: translateY(-2px); /* Efeito de "levantar" */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-.btn-secundario {
-    background-color: transparent;
-    color: var(--cor-principal);
-    border: 2px solid var(--cor-principal);
-    padding: 0.7rem 1.7rem;
-}
-
-.btn-secundario:hover {
-    background-color: var(--cor-principal);
+    background-color: var(--cor-principal); /* Escurece no hover */
     color: var(--cor-texto-claro);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* --- Cards Gerais --- */
+/* --- Cards Gerais (REDESIGN) --- */
 .card {
     background-color: var(--cor-texto-claro);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px var(--cor-sombra);
-    padding: 2rem;
+    border-radius: 16px; /* Mais arredondado */
+    box-shadow: 0 8px 24px var(--cor-sombra); /* Sombra mais suave e difusa */
+    padding: 2.5rem; /* Mais padding */
     margin-bottom: 2rem;
+    border: 1px solid var(--cor-borda);
 }
 
 /* --- 1. Header Hero (Banner Principal) --- */
 .hero {
-    background: linear-gradient(rgba(0, 86, 145, 0.8), rgba(0, 86, 145, 0.8)), 
-                url('https://picsum.photos/1920/600?random=1') no-repeat center center/cover; /* Imagem de fundo abstrata */
+    background: linear-gradient(rgba(0, 95, 115, 0.8), rgba(0, 95, 115, 0.8)), 
+                url('https://picsum.photos/1920/600?random=2') no-repeat center center/cover; /* Nova imagem e nova cor de gradiente */
     color: var(--cor-texto-claro);
     padding: 5rem 0;
     text-align: center;
-    display: flex; /* Para centralizar o conteúdo verticalmente */
+    display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 450px; /* Altura mínima do banner */
+    min-height: 450px;
     position: relative;
 }
 
 .hero h1 {
     margin: 0;
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     color: var(--cor-texto-claro);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra mais sutil */
     line-height: 1.2;
 }
 
 .hero .slogan {
     font-family: var(--fonte-textos);
-    font-size: 1.5rem;
+    color: var(--cor-texto-subtitulo);
+    font-size: 1.4rem;
     font-weight: 400;
-    opacity: 0.95;
+    opacity: 1;
     margin: 1rem 0 2rem;
 }
 
@@ -139,14 +140,15 @@ a:hover {
     padding: 1rem 2.5rem;
 }
 
-/* --- 2. Navegação (Nav) --- */
+/* --- 2. Navegação (Nav) (REDESIGN) --- */
 nav {
-    background-color: var(--cor-principal);
-    padding: 0.8rem 0;
+    background-color: var(--cor-fundo); /* Fundo BRANCO */
+    padding: 0rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px var(--cor-sombra); /* Sombra moderna */
+    border-bottom: 1px solid var(--cor-borda);
 }
 
 nav ul {
@@ -159,20 +161,26 @@ nav ul {
 }
 
 nav li {
-    margin: 0 0.8rem;
+    margin: 0 0.5rem;
 }
 
 nav a {
-    color: var(--cor-texto-claro);
+    color: var(--cor-texto-secundario); /* Texto escuro */
     text-decoration: none;
     font-weight: 600;
     padding: 0.7rem 1.2rem;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: background-color 0.3s ease, color 0.3s ease;
     font-family: var(--fonte-titulos);
+    font-size: 0.95rem;
 }
 
-nav a:hover, nav a.ativo {
+nav a:hover {
+    background-color: var(--cor-fundo-leve); /* Fundo sutil no hover */
+    color: var(--cor-principal);
+}
+
+nav a.ativo {
     background-color: var(--cor-secundaria);
     color: var(--cor-texto-claro);
 }
@@ -193,123 +201,27 @@ section {
     text-align: center;
 }
 
-.boas-vindas h2 {
-    color: var(--cor-principal);
-    margin-bottom: 1.5rem;
-}
-
 .boas-vindas p {
     font-size: 1.15rem;
     max-width: 800px;
     margin: 0 auto 1rem;
 }
 
-/* --- Seção de Destaques (Cards de Foco) --- */
-.destaques h2 {
-    text-align: center;
-    margin-bottom: 2.5rem;
-}
-
-.cards-foco {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 colunas, responsivo */
-    gap: 2rem;
-}
-
-.card-foco {
-    background-color: var(--cor-texto-claro);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px var(--cor-sombra);
-    padding: 1.8rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-foco:hover {
-    transform: translateY(-5px); /* Efeito de "levantar" */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-}
-
-.card-foco h3 {
-    color: var(--cor-secundaria);
-    margin-top: 0.5rem;
-    font-size: 1.5rem;
-    min-height: 60px; /* Garante altura mínima para títulos */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card-foco p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 1.5rem;
-}
-
-.card-foco .saiba-mais {
-    color: var(--cor-principal);
-    font-weight: 600;
-}
-
-.card-foco .saiba-mais:hover {
-    text-decoration: underline;
-}
-
-/* --- Seção Chamada Publicações --- */
-.chamada-publicacoes {
-    text-align: center;
-    background-color: var(--cor-principal); /* Fundo com a cor principal */
-    color: var(--cor-texto-claro);
-    padding: 3rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px var(--cor-sombra);
-}
-
-.chamada-publicacoes h2 {
-    color: var(--cor-texto-claro);
-    font-size: 2rem;
-    margin-bottom: 1.2rem;
-}
-
-.chamada-publicacoes p {
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: 0 auto 2rem;
-    opacity: 0.9;
-}
-
-.chamada-publicacoes .btn-secundario {
-    background-color: var(--cor-texto-claro); /* Botão branco */
-    color: var(--cor-principal);
-    border: 2px solid var(--cor-texto-claro);
-}
-
-.chamada-publicacoes .btn-secundario:hover {
-    background-color: var(--cor-fundo); /* Fundo levemente cinza ao hover */
-    color: var(--cor-principal);
-    transform: translateY(-2px);
-}
-
-
-/* --- 4. Rodapé (Footer) --- */
+/* --- 4. Rodapé (Footer) (REDESIGN) --- */
 footer {
-    background-color: var(--cor-principal);
-    color: #c9d6e4; /* Cor de texto mais clara para o rodapé */
+    background-color: var(--cor-fundo-leve); /* Fundo claro */
+    color: var(--cor-texto-secundario); /* Texto secundário */
     text-align: center;
-    padding: 2rem 0;
+    padding: 2.5rem 0;
     font-size: 0.9rem;
-    border-top: 5px solid var(--cor-secundaria); /* Detalhe no topo do rodapé */
+    border-top: 1px solid var(--cor-borda); /* Borda clara */
+    margin-top: 3rem;
 }
 
 footer p {
     margin: 0.4rem 0;
 }
 
-footer .desenvolvido-por {
-    margin-top: 1rem;
-    font-size: 0.8rem;
-    opacity: 0.8;
-}
 
 /* --- Responsividade Básica (Media Queries) --- */
 @media (max-width: 768px) {
@@ -317,27 +229,10 @@ footer .desenvolvido-por {
         padding: 4rem 0;
         min-height: 350px;
     }
+    .hero h1 { font-size: 2.5rem; }
+    .hero .slogan { font-size: 1.2rem; }
 
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero .slogan {
-        font-size: 1.2rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav li {
-        margin: 0.5rem 0;
-    }
-
-    .cards-foco {
-        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
-    }
+    /* Nav responsiva já está sendo tratada pelo .nav-container */
 
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
@@ -349,162 +244,76 @@ footer .desenvolvido-por {
         padding: 3rem 0;
         min-height: 300px;
     }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero .slogan {
-        font-size: 1rem;
-    }
-
-    .btn-principal, .btn-secundario {
-        padding: 0.7rem 1.2rem;
-        font-size: 0.9rem;
-    }
-
-    .chamada-publicacoes {
-        padding: 2rem;
-    }
+    .hero h1 { font-size: 2rem; }
+    .hero .slogan { font-size: 1rem; }
 }
 
-/* --- Estilos da Página de Membros --- */
-
-/* O 'hr' é a linha divisória que usamos */
+/* --- Estilos da Página de Membros (REDESIGN) --- */
 hr {
     border: 0;
     border-top: 1px solid var(--cor-borda);
     margin: 2.5rem 0;
 }
 
-/* A grade que segura todos os cards de membros */
 .grid-membros {
     display: grid;
-    /* Cria colunas automáticas:
-      - Tenta criar colunas de no mínimo 280px.
-      - Se couber mais, elas crescem igualmente (1fr).
-      - Em telas pequenas, ele automaticamente faz 1 coluna.
-    */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem; /* Espaçamento entre os cards */
+    gap: 2.5rem;
 }
 
-/* O card individual de cada membro */
 .card-membro {
     background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px var(--cor-sombra);
+    border-radius: 16px; /* Bordas suaves */
+    box-shadow: 0 8px 24px var(--cor-sombra); /* Sombra suave */
     text-align: center;
-    padding: 1.5rem;
+    padding: 2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Garante que a imagem não vaze */
+    overflow: hidden;
+    border: 1px solid var(--cor-borda);
 }
 
 .card-membro:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px); /* Efeito de levantar mais pronunciado */
+    box-shadow: 0 12px 30px rgba(99, 110, 114, 0.15);
 }
 
-/* A foto do membro */
 .card-membro img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%; /* Foto circular */
-    object-fit: cover; /* Garante que a foto não distorça */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
     margin: 0 auto 1.5rem;
-    border: 4px solid var(--cor-borda);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border: 5px solid var(--cor-fundo); /* Borda branca */
+    box-shadow: 0 4px 10px var(--cor-sombra); /* Sombra na foto */
 }
 
-/* Nome do membro */
 .card-membro h3 {
-    font-family: var(--fonte-titulos);
-    font-size: 1.3rem;
-    color: var(--cor-principal);
-    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+    color: var(--cor-texto-principal);
+    font-weight: 600;
+    margin: 0 0 0.25rem;
 }
 
-/* Função/Titulação do membro */
 .card-membro .funcao {
-    font-family: var(--fonte-textos);
-    font-size: 0.95rem;
-    color: #555;
-    margin: 0 0 1.5rem;
-}
-
-/* Link para o Currículo Lattes */
-.card-membro .link-lattes {
-    display: inline-block;
-    background-color: var(--cor-fundo);
-    color: var(--cor-principal);
-    border: 1px solid var(--cor-borda);
-    padding: 0.6rem 1.2rem;
-    border-radius: 20px;
     font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    color: var(--cor-texto-secundario);
+    margin: 0 0 1.5rem;
+    min-height: 40px; /* Ajuda a alinhar cards */
 }
 
-.card-membro .link-lattes:hover {
-    background-color: var(--cor-principal);
-    color: var(--cor-texto-claro);
-    border-color: var(--cor-principal);
-}
-
-/* --- Estilos da Página de Contato --- */
-
-.info-contato h4 {
-    font-size: 1.4rem;
-    color: var(--cor-principal);
-    margin-bottom: 0.5rem;
-}
-
-.info-contato p {
-    margin-bottom: 0.5rem;
-}
-
-/* Estilo para o link de e-mail clicável */
+/* --- Estilos da Página de Contato (REDESIGN) --- */
 .link-contato {
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--cor-secundaria);
-    word-break: break-all; /* Garante que o e-mail quebre em telas pequenas */
+    word-break: break-all;
 }
 
-.link-contato:hover {
-    text-decoration: underline;
-}
-
-/* --- Estilos da Página de Contato --- */
-
-.info-contato h4 {
-    font-size: 1.4rem;
-    color: var(--cor-principal);
-    margin-bottom: 0.5rem;
-}
-
-.info-contato p {
-    margin-bottom: 0.5rem;
-}
-
-/* Estilo para o link de e-mail clicável */
-.link-contato {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--cor-secundaria);
-    word-break: break-all; /* Garante que o e-mail quebre em telas pequenas */
-}
-
-.link-contato:hover {
-    text-decoration: underline;
-}
-
-/* Redefinição para os botões de redes sociais (estilo círculo) */
 .grid-redes-sociais {
-    display: flex; /* Usamos flexbox para organizar em linha */
-    justify-content: flex-start; /* Centraliza os botões */
-    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
-    gap: 1.5rem; /* Espaço entre os botões */
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5rem;
     margin-top: 2rem;
 }
 
@@ -512,152 +321,99 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px; /* Largura para o círculo */
-    height: 60px; /* Altura para o círculo */
-    border-radius: 50%; /* Faz o elemento ser um círculo */
-    font-size: 0; /* Esconde o texto "Twitter", "Instagram", etc. */
-    color: white; /* Cor dos ícones */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 0;
+    color: white;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--cor-principal); /* Cor principal */
 }
 
 .social-link i {
-    font-size: 1.8rem; /* Tamanho do ícone do Font Awesome */
-    color: white; /* Cor dos ícones */
+    font-size: 1.8rem;
+    color: white;
 }
 
-/* Efeito ao passar o mouse */
 .social-link:hover {
-    transform: translateY(-5px); /* Move um pouco para cima */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px var(--cor-sombra);
+    background-color: var(--cor-secundaria); /* Ilumina no hover */
 }
 
-/* --- Cores dos Círculos --- */
-/* Use a cor que desejar para cada rede.
-   O #4A308B é um roxo escuro, similar ao da sua imagem. */
-
-.social-link.twitter {
-    background-color: #005691; /* Roxo escuro */
-}
-
-.social-link.instagram {
-    background-color: #005691; /* Roxo escuro */
-}
-
+/* Remove estilos de cores individuais */
+.social-link.twitter,
+.social-link.instagram,
 .social-link.github {
-    background-color: #005691; /* Roxo escuro */
+    background-color: var(--cor-principal);
 }
 
-/* Se quiser cores específicas para cada rede, descomente e ajuste: */
-/*
-.social-link.twitter {
-    background-color: #1DA1F2; 
-}
-.social-link.instagram {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-}
-.social-link.github {
-    background-color: #333; 
-}
-*/
-
-/* --- Estilos da Navegação com Logo --- */
-
-/* Container da Nav: 
-  Usamos flexbox para alinhar o logo (esquerda) e o menu (direita) 
-*/
+/* --- Estilos da Navegação com Logo (REDESIGN) --- */
 .nav-container {
     display: flex;
-    justify-content: flex-end; /* Isso é o principal! */
+    justify-content: space-between; /* LOGO (esq) | MENU (dir) */
     align-items: center;
-    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
-    position: relative;
-
-    min-height: 70px;;
+    flex-wrap: wrap;
 }
 
-/* Estilo do Logo */
-
 .nav-logo {
-    position: absolute; /* Tiramos do fluxo normal */
-    top: -35px; 
-    left: 0;
-    z-index: 10;
+    position: static; /* Tira o logo do "absolute" */
+    /* Remove top e left */
 }
 
 .nav-logo img {
-    height: 120px; /* Ajuste esta altura como preferir */
-    width: auto; /* Mantém a proporção da imagem */
-    display: block; /* Remove qualquer espaço extra abaixo da imagem */
+    height: 65px; /* Altura reduzida para caber na nav */
+    width: auto;
+    display: block;
 }
 
-/* Ajuste no Menu (ul):
-  Removemos a centralização antiga e garantimos que ele se comporte bem no flex
-*/
 nav ul.nav-menu {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    flex-wrap: wrap;
     align-items: center;
 }
 
-/* --- Ajuste de Responsividade --- */
-
+/* --- Ajuste de Responsividade da Nav (REDESIGN) --- */
 @media (max-width: 768px) {
-    /* Em telas pequenas (como celulares), centralizamos
-      o logo e o menu quando eles quebram a linha.
-    */
-
-    .nav-logo {
-        position: static; /* Volta ao fluxo normal */
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .nav-logo img {
-        height: 100px; /* Reduz um pouco a altura no mobile */
-    }
-
     .nav-container {
-        justify-content: center; /* Centraliza tudo no mobile */
-        gap: 1rem; /* Adiciona um espaço entre o logo e o menu */
-        position: static;
+        flex-direction: column; /* Empilha logo e menu */
+        justify-content: center;
+        gap: 1rem;
     }
-
+    .nav-logo img {
+        height: 70px; /* Pode ser um pouco maior no mobile */
+    }
     nav ul.nav-menu {
-        justify-content: center; /* Centraliza os itens de menu no mobile */
+        justify-content: center;
         width: 100%;
     }
 }
 
-/* ==================================================================
-   AJUSTE ESPECÍFICO PARA A SEÇÃO DE MONITORES (10 itens)
-   ================================================================== */
+/* --- AJUSTE MONITORES (10 itens) --- */
+/* (O CSS original para isso já estava bom e foi mantido) */
 .monitores-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2.5rem;
 }
 
-/* Telas grandes e médias: forçamos 4 colunas (fica 4 + 4 + 2) */
 @media (min-width: 992px) {
     .monitores-grid {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
-/* Telas médias-pequenas (tablet): 3 colunas */
 @media (max-width: 991px) and (min-width: 769px) {
     .monitores-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Celular: 1 ou 2 colunas conforme couber */
 @media (max-width: 576px) {
     .monitores-grid {
         grid-template-columns: 1fr;
