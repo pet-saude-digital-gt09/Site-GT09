@@ -633,3 +633,33 @@ nav ul.nav-menu {
         width: 100%;
     }
 }
+
+/* ==================================================================
+   AJUSTE ESPECÍFICO PARA A SEÇÃO DE MONITORES (10 itens)
+   ================================================================== */
+.monitores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Telas grandes e médias: forçamos 4 colunas (fica 4 + 4 + 2) */
+@media (min-width: 992px) {
+    .monitores-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Telas médias-pequenas (tablet): 3 colunas */
+@media (max-width: 991px) and (min-width: 769px) {
+    .monitores-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Celular: 1 ou 2 colunas conforme couber */
+@media (max-width: 576px) {
+    .monitores-grid {
+        grid-template-columns: 1fr;
+    }
+}
