@@ -57,8 +57,43 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 GT-09 Interoperabilidade e Parcerias. Todos os direitos reservados.</p>
-            <p>Vinculado à UFPB</p>
+            <div class="footer-content">
+                
+                <div class="footer-section sobre">
+                    <h3>GT-09 EloEduc</h3>
+                    <p>
+                        Promovendo a interoperabilidade e fortalecendo parcerias no SUS Digital. 
+                        Uma iniciativa vinculada à UFPB.
+                    </p>
+                </div>
+
+                <div class="footer-section links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="{{ url_for('main.index_route') }}">Página Inicial</a></li>
+                        <li><a href="{{ url_for('main.sobre_route') }}">Sobre Nós</a></li>
+                        <li><a href="{{ url_for('main.membros_route') }}">Nossa Equipe</a></li>
+                        <li><a href="{{ url_for('main.contato_route') }}">Fale Conosco</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section contato">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato.petsaude.ufpb@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> João Pessoa - PB, Brasil</p>
+                    
+                    <div class="footer-socials">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/zzdavix"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 GT-09 Interoperabilidade. Todos os direitos reservados.</p>
+            </div>
         </div>
     </footer>
 
