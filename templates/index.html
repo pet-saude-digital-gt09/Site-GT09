@@ -9,20 +9,56 @@ Página Inicial | GT-09 Interoperabilidade e Parcerias
     <div class="container">
         <h1>GT-09: Interoperabilidade e Parcerias Colaborativas no SUS Digital</h1>
         <p class="slogan">Conectando sistemas e pessoas para fortalecer o Sistema Único de Saúde.</p>
-        <a href="{{ url_for('main.sobre_route') }}" class="btn-principal">Saiba Mais Sobre Nós</a>
+        
     </div>
 </header>
 {% endblock %}
 
 {% block content %}
-<section class="boas-vindas card">
-    <h2>Bem-vindos ao portal do GT-09</h2>
+<section class="boas-vindas">
+    <h2>Bem-vindos ao Portal GT-09</h2>
     <p>
-        Somos um grupo de trabalho focado em pesquisar, debater e propor soluções para os desafios da interoperabilidade e da colaboração no ecossistema do SUS Digital.
-        Nosso objetivo é contribuir para um sistema de saúde mais integrado, eficiente e centrado no cidadão, onde os dados fluem de forma segura e inteligente entre diferentes sistemas e instituições.
+        Somos um grupo de trabalho vinculado ao <strong>PET-Saúde Digital da UFPB</strong>, focado em pesquisar e propor soluções para os desafios da interoperabilidade no ecossistema de saúde pública.
     </p>
-    <p>
-        Navegue pelo nosso site para conhecer nossa equipe, nossas linhas de pesquisa e nossas publicações.
-    </p>
+</section>
+
+<section class="destaques">
+    <div class="cards-foco">
+        
+        <div class="card-foco">
+            <div class="icone-foco">
+                <i class="fas fa-network-wired"></i>
+            </div>
+            <h3>Interoperabilidade</h3>
+            <p>Trabalhamos para buscar caminhos e soluções que conectem os diferentes sistemas de informação do SUS, permitindo que eles conversem entre si.</p>
+        </div>
+
+        <div class="card-foco">
+            <div class="icone-foco">
+                <i class="fas fa-user-graduate"></i>
+            </div>
+            <h3>Ensino e Pesquisa</h3>
+            <p>Integramos estudantes e profissionais para produzir conhecimento científico e capacitação técnica voltada ao SUS Digital.</p>
+        </div>
+
+        <div class="card-foco">
+            <div class="icone-foco">
+                <i class="fas fa-handshake"></i>
+            </div>
+            <h3>Parcerias Estratégicas</h3>
+            <p>Buscamos conectar universidade, gestores públicos e iniciativa privada para acelerar a inovação na saúde.</p>
+        </div>
+
+    </div>
+</section>
+
+<hr>
+
+<section class="chamada-publicacoes">
+    <div class="conteudo-chamada">
+        <h2>Quer saber o que estamos produzindo?</h2>
+        <p>Confira nossos artigos, relatórios técnicos e participações em eventos acadêmicos.</p>
+        <a href="{{ url_for('main.sobre_route') }}" class="btn-secundario">Ver Produções</a>
+    </div>
 </section>
 {% endblock %}

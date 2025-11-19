@@ -109,12 +109,12 @@ a:hover {
     background: linear-gradient(rgba(0, 95, 115, 0.8), rgba(0, 95, 115, 0.8)), 
                 url('https://picsum.photos/1920/600?random=2') no-repeat center center/cover; /* Nova imagem e nova cor de gradiente */
     color: var(--cor-texto-claro);
-    padding: 5rem 0;
+    padding: 1rem 0;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 450px;
+    min-height: 300px;
     position: relative;
 }
 
@@ -320,9 +320,26 @@ footer {
     text-align: center;
     padding-top: 2rem;
     font-size: 0.85rem;
-    opacity: 0.7;
+}
+.footer-bottom p {
+    opacity: 1;
+    color: var(--cor-texto-subtitulo);
+    margin: 0;
 }
 
+/* Estilo para o link do Creative Commons */
+.footer-bottom a {
+    color: #ffffff;           /* Link Branco */
+    font-weight: 600;         /* Um pouco mais gordinho */
+    text-decoration: underline; /* Sublinhado para saber que é clicável */
+    transition: color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse no link */
+.footer-bottom a:hover {
+    color: var(--cor-secundaria); /* Fica azulzinho/teal no hover */
+    text-decoration: none;
+}
 
 /* --- Responsividade Básica (Media Queries) --- */
 @media (max-width: 768px) {
@@ -827,5 +844,140 @@ nav ul.nav-menu {
     
     .contato-form-card {
         order: 1;
+    }
+}
+
+/* --- Estilos da Página Inicial (REDESIGN) --- */
+
+/* Ajuste dos Botões no Hero */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Botão secundário específico para o Hero (transparente com borda branca) */
+.btn-secundario-hero {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255,255,255, 0.3);
+    background-color: rgba(255,255,255, 0.1);
+    color: var(--cor-texto-claro);
+    font-family: var(--fonte-titulos);
+    cursor: pointer;
+}
+
+.btn-secundario-hero:hover {
+    background-color: var(--cor-texto-claro);
+    color: var(--cor-principal);
+    transform: translateY(-3px);
+}
+
+/* Seção de Destaques (Grid de 3 colunas) */
+.destaques {
+    margin-top: 3rem;
+}
+
+.cards-foco {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card-foco {
+    background-color: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 5px 20px var(--cor-sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.card-foco:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: var(--cor-borda);
+}
+
+.icone-foco {
+    width: 70px;
+    height: 70px;
+    background-color: var(--cor-fundo-leve);
+    color: var(--cor-principal);
+    border-radius: 50%; /* Círculo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 1.5rem; /* Centraliza e dá espaço embaixo */
+    transition: all 0.3s ease;
+}
+
+/* Ao passar o mouse no card, o ícone fica colorido */
+.card-foco:hover .icone-foco {
+    background-color: var(--cor-principal);
+    color: white;
+}
+
+.card-foco h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--cor-texto-principal);
+}
+
+/* Seção Chamada (Faixa Colorida) */
+.chamada-publicacoes {
+    background-color: var(--cor-principal);
+    background-image: linear-gradient(135deg, var(--cor-principal) 0%, var(--cor-secundaria) 100%); /* Gradiente bonito */
+    color: white;
+    padding: 4rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    margin: 4rem 0;
+    box-shadow: 0 10px 30px rgba(10, 147, 150, 0.2);
+}
+
+.chamada-publicacoes h2 {
+    color: white; /* Força branco */
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+.chamada-publicacoes p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Ajuste no botão secundário quando usado dentro da chamada */
+.chamada-publicacoes .btn-secundario {
+    background-color: white;
+    color: var(--cor-principal);
+    border: none;
+}
+
+.chamada-publicacoes .btn-secundario:hover {
+    background-color: var(--cor-fundo-leve);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsividade da Home */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        padding: 0 2rem;
+    }
+    
+    .btn-secundario-hero {
+        width: 100%; /* Botão ocupa largura total no celular */
+        box-sizing: border-box;
     }
 }
