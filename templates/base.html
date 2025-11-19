@@ -31,6 +31,10 @@
                 <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo GT-09 EloEduc">
             </a>
 
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
             <ul class="nav-menu">
                 <li><a href="{{ url_for('main.index_route') }}" 
                    class="{{ 'ativo' if active_page == 'index_route' else '' }}">Página Inicial</a></li>
@@ -58,5 +62,15 @@
         </div>
     </footer>
 
+    <script>
+        const btnMobile = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        // Quando clicar no botão...
+        btnMobile.addEventListener('click', () => {
+            // ...adiciona ou remove a classe 'aberto' na lista
+            navMenu.classList.toggle('aberto');
+        });
+    </script>
 </body>
 </html>
