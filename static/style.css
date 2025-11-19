@@ -704,3 +704,128 @@ nav ul.nav-menu {
         grid-template-columns: 1fr; /* Empilha os cards */
     }
 }
+
+/* --- Estilos da Página de Contato (Redesign) --- */
+
+.contato-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Info ocupa menos, Form ocupa mais */
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Cartões Brancos (Container das colunas) */
+.contato-info-card, .contato-form-card {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px var(--cor-sombra);
+    border: 1px solid var(--cor-borda);
+}
+
+.contato-info-card h3, .contato-form-card h3 {
+    margin-top: 0;
+    color: var(--cor-principal);
+    font-size: 1.5rem;
+}
+
+/* Itens de Informação (Ícone + Texto) */
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.icone-info {
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor-fundo-leve);
+    color: var(--cor-secundaria);
+    border-radius: 50%;
+    display: flex; /* Flex para centralizar ícone */
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    word-break: break-all; /* Previne que e-mails longos quebrem o layout */
+}
+
+/* Redes Sociais na página de contato */
+.redes-sociais-contato {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.redes-sociais-contato a {
+    width: 45px;
+    height: 45px;
+    background-color: var(--cor-principal);
+    color: white;
+    border-radius: 8px; /* Quadrado arredondado para variar do rodapé */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.redes-sociais-contato a:hover {
+    background-color: var(--cor-secundaria);
+    transform: translateY(-3px);
+}
+
+/* --- Estilos do Formulário --- */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--cor-texto-principal);
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem; /* Espaço interno confortável */
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    font-family: var(--fonte-textos);
+    font-size: 1rem;
+    background-color: var(--cor-fundo-leve);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 0 0 3px rgba(10, 147, 150, 0.1); /* Brilho azul ao digitar */
+    background-color: #fff;
+}
+
+/* Responsividade do Contato */
+@media (max-width: 768px) {
+    .contato-wrapper {
+        grid-template-columns: 1fr; /* Empilha as colunas no celular */
+    }
+    
+    .contato-info-card {
+        order: 2; /* Joga as infos para baixo do form no celular (opcional) */
+    }
+    
+    .contato-form-card {
+        order: 1;
+    }
+}
