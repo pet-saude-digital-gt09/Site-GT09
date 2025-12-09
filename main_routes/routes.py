@@ -27,3 +27,7 @@ def membros_route():
 @main_bp.route('/contato')
 def contato_route():
     return render_template('contato.html', active_page='contato_route')
+
+@main_bp.route('/producoes')
+def producoes_route():
+    return render_template('producoes.html', active_page='producoes_route')

@@ -1,0 +1,420 @@
+{% extends "base.html" %}
+
+{% block title %}
+Produções | GT-09 Interoperabilidade no SUS Digital
+{% endblock %}
+
+{% block header %}
+    <header class="hero-interno">
+    </header>
+{% endblock %}
+
+{% block content %}
+<section class="pagina-conteudo">
+    <div class="producoes-header">
+        <h2>Nossas Produções</h2>
+        <p class="producoes-subtitulo">
+            Explore os trabalhos científicos, projetos e materiais desenvolvidos pelo GT-09
+        </p>
+    </div>
+
+    <!-- Filtros por categoria -->
+    <div class="filtros-producao">
+        <button class="filtro-btn ativo" data-categoria="todos">
+            <i class="fas fa-th"></i> Todos
+        </button>
+        <button class="filtro-btn" data-categoria="artigos">
+            <i class="fas fa-file-alt"></i> Artigos
+        </button>
+        <button class="filtro-btn" data-categoria="projetos">
+            <i class="fas fa-project-diagram"></i> Projetos
+        </button>
+        <button class="filtro-btn" data-categoria="materiais">
+            <i class="fas fa-book"></i> Materiais
+        </button>
+    </div>
+
+    <!-- Grid de Produções -->
+    <div class="producoes-grid">
+        
+        <!-- Artigo 1 -->
+        <article class="producao-item" data-categoria="artigos">
+            <div class="producao-badge artigo">
+                <i class="fas fa-file-alt"></i>
+            </div>
+            <div class="producao-conteudo">
+                <div class="producao-cabecalho">
+                    <span class="producao-tipo-label">Artigo Científico</span>
+                    <span class="producao-ano">2024</span>
+                </div>
+                <h3>Título do Artigo Científico</h3>
+                <p class="producao-autores">
+                    <i class="fas fa-users"></i> Autor 1, Autor 2, Autor 3
+                </p>
+                <p class="producao-resumo">
+                    Descrição breve do artigo e suas contribuições para a área de interoperabilidade no SUS Digital. Este trabalho apresenta resultados importantes...
+                </p>
+                <div class="producao-acoes">
+                    <a href="#" class="btn-producao" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Ver publicação
+                    </a>
+                    <a href="#" class="btn-producao-secundario" target="_blank">
+                        <i class="fas fa-download"></i> PDF
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Projeto 1 -->
+        <article class="producao-item" data-categoria="projetos">
+            <div class="producao-badge projeto">
+                <i class="fas fa-project-diagram"></i>
+            </div>
+            <div class="producao-conteudo">
+                <div class="producao-cabecalho">
+                    <span class="producao-tipo-label">Projeto</span>
+                    <span class="producao-ano">2024</span>
+                </div>
+                <h3>Nome do Projeto</h3>
+                <p class="producao-autores">
+                    <i class="fas fa-users"></i> Equipe GT-09
+                </p>
+                <p class="producao-resumo">
+                    Descrição do projeto, objetivos principais e resultados alcançados. Este projeto visa melhorar a interoperabilidade...
+                </p>
+                <div class="producao-acoes">
+                    <a href="#" class="btn-producao" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Ver projeto
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Material 1 -->
+        <article class="producao-item" data-categoria="materiais">
+            <div class="producao-badge material">
+                <i class="fas fa-book"></i>
+            </div>
+            <div class="producao-conteudo">
+                <div class="producao-cabecalho">
+                    <span class="producao-tipo-label">Material Educativo</span>
+                    <span class="producao-ano">2024</span>
+                </div>
+                <h3>Nome do Material</h3>
+                <p class="producao-autores">
+                    <i class="fas fa-users"></i> GT-09
+                </p>
+                <p class="producao-resumo">
+                    Descrição do material educativo ou recurso desenvolvido para capacitação e disseminação de conhecimento.
+                </p>
+                <div class="producao-acoes">
+                    <a href="#" class="btn-producao" target="_blank">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Adicione mais produções aqui seguindo o mesmo padrão -->
+        
+    </div>
+
+    <!-- Mensagem quando não há resultados -->
+    <div class="sem-resultados" style="display: none;">
+        <i class="fas fa-search"></i>
+        <p>Nenhuma produção encontrada nesta categoria.</p>
+    </div>
+</section>
+
+<style>
+    .producoes-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .producoes-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--cor-texto-principal);
+    }
+
+    .producoes-subtitulo {
+        font-size: 1.1rem;
+        color: var(--cor-texto-secundario);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Filtros */
+    .filtros-producao {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 3rem;
+        padding: 1.5rem;
+        background: var(--cor-fundo-leve);
+        border-radius: 12px;
+    }
+
+    .filtro-btn {
+        padding: 0.75rem 1.5rem;
+        border: 2px solid var(--cor-borda);
+        background: var(--cor-fundo);
+        color: var(--cor-texto-secundario);
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--fonte-textos);
+    }
+
+    .filtro-btn:hover {
+        border-color: var(--cor-secundaria);
+        color: var(--cor-secundaria);
+        transform: translateY(-2px);
+    }
+
+    .filtro-btn.ativo {
+        background: var(--cor-secundaria);
+        color: var(--cor-texto-claro);
+        border-color: var(--cor-secundaria);
+    }
+
+    /* Grid de Produções */
+    .producoes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .producao-item {
+        background: var(--cor-fundo);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px var(--cor-sombra);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        border-left: 4px solid transparent;
+    }
+
+    .producao-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .producao-item[data-categoria="artigos"] {
+        border-left-color: #005f73;
+    }
+
+    .producao-item[data-categoria="projetos"] {
+        border-left-color: #0a9396;
+    }
+
+    .producao-item[data-categoria="materiais"] {
+        border-left-color: #e9c46a;
+    }
+
+    .producao-badge {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: white;
+        margin: 1.5rem auto 0;
+        position: relative;
+    }
+
+    .producao-badge.artigo {
+        background: linear-gradient(135deg, #005f73, #0a9396);
+    }
+
+    .producao-badge.projeto {
+        background: linear-gradient(135deg, #0a9396, #94d2bd);
+    }
+
+    .producao-badge.material {
+        background: linear-gradient(135deg, #e9c46a, #f4a261);
+    }
+
+    .producao-conteudo {
+        padding: 1.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .producao-cabecalho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .producao-tipo-label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--cor-secundaria);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .producao-ano {
+        font-size: 0.9rem;
+        color: var(--cor-texto-subtitulo);
+        font-weight: 500;
+    }
+
+    .producao-item h3 {
+        font-size: 1.4rem;
+        margin: 0 0 0.75rem 0;
+        color: var(--cor-texto-principal);
+        line-height: 1.3;
+    }
+
+    .producao-autores {
+        font-size: 0.95rem;
+        color: var(--cor-texto-secundario);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .producao-autores i {
+        color: var(--cor-secundaria);
+    }
+
+    .producao-resumo {
+        font-size: 0.95rem;
+        color: var(--cor-texto-secundario);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+    }
+
+    .producao-acoes {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-top: auto;
+    }
+
+    .btn-producao {
+        padding: 0.6rem 1.2rem;
+        background: var(--cor-secundaria);
+        color: var(--cor-texto-claro);
+        border-radius: 6px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .btn-producao:hover {
+        background: var(--cor-principal);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-producao-secundario {
+        padding: 0.6rem 1.2rem;
+        background: transparent;
+        color: var(--cor-secundaria);
+        border: 2px solid var(--cor-secundaria);
+        border-radius: 6px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .btn-producao-secundario:hover {
+        background: var(--cor-secundaria);
+        color: var(--cor-texto-claro);
+    }
+
+    .sem-resultados {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: var(--cor-texto-subtitulo);
+    }
+
+    .sem-resultados i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: var(--cor-borda);
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+        .producoes-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .filtros-producao {
+            padding: 1rem;
+        }
+
+        .filtro-btn {
+            padding: 0.6rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .producoes-header h2 {
+            font-size: 2rem;
+        }
+    }
+</style>
+
+<script>
+    // Filtro de produções
+    document.addEventListener('DOMContentLoaded', function() {
+        const filtros = document.querySelectorAll('.filtro-btn');
+        const producoes = document.querySelectorAll('.producao-item');
+        const semResultados = document.querySelector('.sem-resultados');
+
+        filtros.forEach(filtro => {
+            filtro.addEventListener('click', function() {
+                // Remove classe ativo de todos os filtros
+                filtros.forEach(f => f.classList.remove('ativo'));
+                // Adiciona classe ativo no filtro clicado
+                this.classList.add('ativo');
+
+                const categoria = this.getAttribute('data-categoria');
+
+                let visiveis = 0;
+
+                producoes.forEach(producao => {
+                    if (categoria === 'todos' || producao.getAttribute('data-categoria') === categoria) {
+                        producao.style.display = 'flex';
+                        visiveis++;
+                    } else {
+                        producao.style.display = 'none';
+                    }
+                });
+
+                // Mostra ou esconde mensagem de sem resultados
+                if (visiveis === 0) {
+                    semResultados.style.display = 'block';
+                } else {
+                    semResultados.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}
+
