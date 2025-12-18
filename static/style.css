@@ -581,23 +581,19 @@ nav a.ativo {
     min-height: 40px;
 }
 
-/* Grid específico para Monitores (10+ itens) */
+/* Grid específico para Monitores (9 itens → 3x3 no desktop) */
 .monitores-grid {
     display: grid;
     gap: 2.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
 }
 
-@media (min-width: 992px) {
+@media (max-width: 991px) {
     .monitores-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
-@media (max-width: 991px) and (min-width: 769px) {
-    .monitores-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
+
 @media (max-width: 576px) {
     .monitores-grid {
         grid-template-columns: 1fr;
