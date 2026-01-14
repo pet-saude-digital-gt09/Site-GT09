@@ -262,7 +262,7 @@ nav a.ativo {
    ========================================================================== */
 .hero {
     background: linear-gradient(rgba(0, 95, 115, 0.8), rgba(0, 95, 115, 0.8)), 
-                url('https://picsum.photos/1920/600?random=2') no-repeat center center/cover;
+                url('/static/images/paraiba/hero-paraiba.jpg') no-repeat center center/cover;
     color: var(--cor-texto-claro);
     padding: 3rem 0; /* Altura compacta */
     min-height: 300px;
@@ -302,6 +302,14 @@ nav a.ativo {
     }
     .hero h1 { font-size: 2.2rem; }
     .hero .slogan { font-size: 1.1rem; }
+}
+
+/* Hero para páginas internas */
+.hero-interno {
+    background: linear-gradient(rgba(0, 95, 115, 0.7), rgba(0, 95, 115, 0.7)), 
+                url('/static/images/paraiba/hero-interno-paraiba.jpg') no-repeat center center/cover;
+    min-height: 200px;
+    padding: 2rem 0;
 }
 
 /* ==========================================================================
