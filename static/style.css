@@ -35,6 +35,9 @@ body {
     padding: 0;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 .container {
@@ -925,31 +928,64 @@ footer {
 }
 
 @media (max-width: 768px) {
+    footer {
+        overflow: visible;
+    }
+    
+    .patrocinadores-section {
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: visible;
+        min-height: auto;
+        margin-top: 2rem;
+    }
+    
     .patrocinadores-container {
         flex-direction: column;
-        gap: 1.5rem;
-        flex-wrap: wrap;
+        gap: 0.75rem;
+        flex-wrap: nowrap;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+        min-height: auto;
+        display: flex;
     }
     
     .patrocinador-item {
-        padding: 1.2rem 2rem;
+        padding: 0.75rem;
         width: 100%;
-        flex: none;
-        min-height: 80px;
-        max-height: 100px;
+        max-width: 100%;
+        flex: 0 0 auto;
+        min-height: 55px;
+        max-height: 70px;
+        box-sizing: border-box;
+        overflow: hidden;
+        flex-shrink: 0;
+        display: flex;
     }
     
     .patrocinador-logo {
-        max-width: 250px;
-        max-height: 80px;
+        max-width: calc(100% - 1.5rem);
+        max-height: 55px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
     }
     
     .patrocinadores-texto {
         font-size: 0.85rem;
-    }
-    
-    .patrocinadores-section {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding: 0;
+        margin-bottom: 1rem;
     }
 }
