@@ -4,10 +4,7 @@
 Sobre o GT-09 | Interoperabilidade no SUS Digital
 {% endblock %}
 
-{% block header %}
-    <header class="hero-interno">
-    </header>
-{% endblock %}
+{% block header %}{% endblock %}
 
 {% block content %}
 <section class="pagina-conteudo card">
@@ -29,7 +26,11 @@ Sobre o GT-09 | Interoperabilidade no SUS Digital
         </div>
 
         <div class="imagem-intro">
-            <img src="https://picsum.photos/600/400?random=3" alt="Equipe GT-09 trabalhando">
+            {% if sobre_image %}
+            <img src="{{ url_for('static', filename=sobre_image) }}" alt="Paisagem da Paraíba">
+            {% else %}
+            <img src="{{ url_for('static', filename='images/paraiba/sobre-paraiba.jpg') }}" alt="Paisagem da Paraíba">
+            {% endif %}
         </div>
     </div>
 
