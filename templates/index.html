@@ -4,6 +4,22 @@
 Página Inicial | GT-09 Interoperabilidade e Parcerias
 {% endblock %}
 
+{% block meta_description %}
+Bem-vindos ao GT-09! Grupo de trabalho focado em interoperabilidade no SUS Digital, pesquisa e parcerias colaborativas na saúde pública brasileira.
+{% endblock %}
+
+{% block meta_keywords %}
+GT-09, SUS Digital, interoperabilidade, saúde pública, UFPB, PET-Saúde Digital, parcerias
+{% endblock %}
+
+{% block og_title %}
+GT-09: Interoperabilidade e Parcerias no SUS Digital
+{% endblock %}
+
+{% block og_description %}
+Bem-vindos ao GT-09! Trabalhamos em interoperabilidade no SUS Digital com foco em pesquisa e parcerias colaborativas.
+{% endblock %}
+
 {% block header %}
 <header class="hero" {% if hero_image %}style="background: linear-gradient(rgba(0, 95, 115, 0.8), rgba(0, 95, 115, 0.8)), url('{{ url_for('static', filename=hero_image) }}') no-repeat center center/cover;"{% endif %}>
     <div class="container hero-content">

@@ -1,8 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-R">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block meta_description %}GT-09 é um grupo de trabalho focado em interoperabilidade no SUS Digital, promovendo parcerias colaborativas e soluções inovadoras em saúde pública.{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}SUS Digital, gt09, petsaude, Pet Saúde, interoperabilidade, saúde pública, UFPB, pesquisa{% endblock %}">
+    <meta name="author" content="GT-09 UFPB">
+    <meta name="theme-color" content="#005f73">
+    
+    <!-- Open Graph Tags (compartilhamento em redes sociais) -->
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}GT-09: Interoperabilidade no SUS Digital{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Grupo de trabalho focado em interoperabilidade e parcerias colaborativas no SUS Digital.{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}{{ url_for('static', filename='images/logos/logobranca.png', _external=True) }}{% endblock %}">
+    <meta property="og:url" content="{% block og_url %}{{ request.url }}{% endblock %}">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}GT-09: Interoperabilidade no SUS Digital{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}Grupo de trabalho focado em interoperabilidade e parcerias colaborativas no SUS Digital.{% endblock %}">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{% block canonical %}{{ request.url }}{% endblock %}">
     
     <title>{% block title %}GT-09: Interoperabilidade no SUS Digital{% endblock %}</title>
     
