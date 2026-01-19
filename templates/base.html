@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{% block meta_description %}GT-09 é um grupo de trabalho focado em interoperabilidade no SUS Digital, promovendo parcerias colaborativas e soluções inovadoras em saúde pública.{% endblock %}">
-    <meta name="keywords" content="{% block meta_keywords %}SUS Digital, gt09, petsaude, Pet Saúde, interoperabilidade, saúde pública, UFPB, pesquisa{% endblock %}">
+    <meta name="description"
+        content="{% block meta_description %}GT-09 é um grupo de trabalho focado em interoperabilidade no SUS Digital, promovendo parcerias colaborativas e soluções inovadoras em saúde pública.{% endblock %}">
+    <meta name="keywords"
+        content="{% block meta_keywords %}SUS Digital, gt09, petsaude, Pet Saúde, interoperabilidade, saúde pública, UFPB, pesquisa{% endblock %}">
     <meta name="author" content="GT-09 UFPB">
     <meta name="theme-color" content="#005f73">
-    
+
     <!-- Open Graph Tags (compartilhamento em redes sociais) -->
     <meta property="og:type" content="{% block og_type %}website{% endblock %}">
     <meta property="og:title" content="{% block og_title %}GT-09: Interoperabilidade no SUS Digital{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}Grupo de trabalho focado em interoperabilidade e parcerias colaborativas no SUS Digital.{% endblock %}">
-    <meta property="og:image" content="{% block og_image %}{{ url_for('static', filename='images/logos/logobranca.png', _external=True) }}{% endblock %}">
+    <meta property="og:description"
+        content="{% block og_description %}Grupo de trabalho focado em interoperabilidade e parcerias colaborativas no SUS Digital.{% endblock %}">
+    <meta property="og:image"
+        content="{% block og_image %}{{ url_for('static', filename='images/logos/logobranca.png', _external=True) }}{% endblock %}">
     <meta property="og:url" content="{% block og_url %}{{ request.url }}{% endblock %}">
     <meta property="og:locale" content="pt_BR">
-    
+
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{% block twitter_title %}GT-09: Interoperabilidade no SUS Digital{% endblock %}">
-    <meta name="twitter:description" content="{% block twitter_description %}Grupo de trabalho focado em interoperabilidade e parcerias colaborativas no SUS Digital.{% endblock %}">
-    
+    <meta name="twitter:title"
+        content="{% block twitter_title %}GT-09: Interoperabilidade no SUS Digital{% endblock %}">
+    <meta name="twitter:description"
+        content="{% block twitter_description %}Grupo de trabalho focado em interoperabilidade e parcerias colaborativas no SUS Digital.{% endblock %}">
+
     <!-- Canonical URL -->
     <link rel="canonical" href="{% block canonical %}{{ request.url }}{% endblock %}">
-    
+
     <title>{% block title %}GT-09: Interoperabilidade no SUS Digital{% endblock %}</title>
-    
+
     <link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/medical-doctor.png" type="image/png">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    
+
     {% block head_extra %}{% endblock %}
 </head>
+
 <body>
 
     {% block header %}
-        {% endblock %}
+    {% endblock %}
 
 
     <nav>
         <div class="container nav-container">
-            
+
             <a href="{{ url_for('main.index_route') }}" class="nav-logo">
                 <img src="{{ url_for('static', filename='images/logos/logo.png') }}" alt="Logo GT-09 EloEduc">
             </a>
@@ -56,17 +66,17 @@
             </button>
 
             <ul class="nav-menu">
-                <li><a href="{{ url_for('main.index_route') }}" 
-                   class="{{ 'ativo' if active_page == 'index_route' else '' }}">Página Inicial</a></li>
-                
-                <li><a href="{{ url_for('main.sobre_route') }}" 
-                   class="{{ 'ativo' if active_page == 'sobre_route' else '' }}">Sobre o GT-09</a></li>
-                
-                <li><a href="{{ url_for('main.membros_route') }}" 
-                   class="{{ 'ativo' if active_page == 'membros_route' else '' }}">Membros</a></li>
-                
-                <li><a href="{{ url_for('main.contato_route') }}" 
-                   class="{{ 'ativo' if active_page == 'contato_route' else '' }}">Contato</a></li>
+                <li><a href="{{ url_for('main.index_route') }}"
+                        class="{{ 'ativo' if active_page == 'index_route' else '' }}">Página Inicial</a></li>
+
+                <li><a href="{{ url_for('main.sobre_route') }}"
+                        class="{{ 'ativo' if active_page == 'sobre_route' else '' }}">Sobre o GT-09</a></li>
+
+                <li><a href="{{ url_for('main.membros_route') }}"
+                        class="{{ 'ativo' if active_page == 'membros_route' else '' }}">Membros</a></li>
+
+                <li><a href="{{ url_for('main.contato_route') }}"
+                        class="{{ 'ativo' if active_page == 'contato_route' else '' }}">Contato</a></li>
             </ul>
         </div>
     </nav>
@@ -78,17 +88,17 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                
+
                 <div class="footer-section sobre">
                     <h3>GT-09 EloEduc</h3>
                     <p>
-                        Promovendo a interoperabilidade e fortalecendo parcerias no SUS Digital. 
+                        Promovendo a interoperabilidade e fortalecendo parcerias no SUS Digital.
                         Uma iniciativa vinculada à UFPB.
                     </p>
                 </div>
 
                 <div class="footer-section links">
-                    <h3>Links Rápidos</h3>
+                    <h3>Links rápidos</h3>
                     <ul>
                         <li><a href="{{ url_for('main.index_route') }}">Página inicial</a></li>
                         <li><a href="{{ url_for('main.sobre_route') }}">Sobre nós</a></li>
@@ -101,7 +111,7 @@
                     <h3>Contato</h3>
                     <p><i class="fas fa-envelope"></i> contatopet.gt09@gmail.com</p>
                     <p><i class="fas fa-map-marker-alt"></i> João Pessoa - PB, Brasil</p>
-                    
+
                     <div class="footer-socials">
                         <a href="https://www.instagram.com/gt09petsaudedigital"><i class="fab fa-instagram"></i></a>
                         <a href="https://github.com/pet-saude-digital-gt09"><i class="fab fa-github"></i></a>
@@ -115,30 +125,37 @@
                 <p class="patrocinadores-texto">Uma iniciativa do GT-09 em parceria com:</p>
                 <div class="patrocinadores-container">
                     <div class="patrocinador-item">
-                        <img src="{{ url_for('static', filename='images/patrocinadores/sms-joao-pessoa.png') }}" alt="Secretaria Municipal de Saúde de João Pessoa" class="patrocinador-logo">
+                        <img src="{{ url_for('static', filename='images/patrocinadores/sms-joao-pessoa.png') }}"
+                            alt="Secretaria Municipal de Saúde de João Pessoa" class="patrocinador-logo">
                     </div>
                     <div class="patrocinador-item">
-                        <img src="{{ url_for('static', filename='images/patrocinadores/sms-cabedelo.png') }}" alt="Secretaria Municipal de Saúde de Cabedelo" class="patrocinador-logo">
+                        <img src="{{ url_for('static', filename='images/patrocinadores/sms-cabedelo.png') }}"
+                            alt="Secretaria Municipal de Saúde de Cabedelo" class="patrocinador-logo">
                     </div>
                     <div class="patrocinador-item">
-                        <img src="{{ url_for('static', filename='images/patrocinadores/ufpb.png') }}" alt="UFPB - Universidade Federal da Paraíba" class="patrocinador-logo">
+                        <img src="{{ url_for('static', filename='images/patrocinadores/ufpb.png') }}"
+                            alt="UFPB - Universidade Federal da Paraíba" class="patrocinador-logo">
                     </div>
                     <div class="patrocinador-item">
-                        <img src="{{ url_for('static', filename='images/patrocinadores/seidigi.png') }}" alt="SEIDIGI - Secretaria de Informação e Saúde Digital" class="patrocinador-logo">
+                        <img src="{{ url_for('static', filename='images/patrocinadores/seidigi.png') }}"
+                            alt="SEIDIGI - Secretaria de Informação e Saúde Digital" class="patrocinador-logo">
                     </div>
                     <div class="patrocinador-item">
-                        <img src="{{ url_for('static', filename='images/patrocinadores/ministerio-saude.png') }}" alt="Ministério da Saúde" class="patrocinador-logo">
+                        <img src="{{ url_for('static', filename='images/patrocinadores/ministerio-saude.png') }}"
+                            alt="Ministério da Saúde" class="patrocinador-logo">
                     </div>
                     <div class="patrocinador-item">
-                        <img src="{{ url_for('static', filename='images/patrocinadores/petsaude.png') }}" alt="PET-Saúde Digital" class="patrocinador-logo">
+                        <img src="{{ url_for('static', filename='images/patrocinadores/petsaude.png') }}"
+                            alt="PET-Saúde Digital" class="patrocinador-logo">
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p>
-                    &copy; 2025 GT-09 UFPB. 
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.pt_BR" target="_blank" style="color: white; text-decoration: underline;">
+                    &copy; 2025 GT-09 UFPB.
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.pt_BR" target="_blank"
+                        style="color: white; text-decoration: underline;">
                         Licenciado sob CC BY 4.0
                     </a>.
                 </p>
@@ -157,4 +174,5 @@
         });
     </script>
 </body>
+
 </html>
