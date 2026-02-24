@@ -496,6 +496,89 @@ nav a.ativo {
     margin-bottom: 2rem;
 }
 
+/* Selo / Destaques rápidos de Saúde no Hero */
+.hero-destaques-saude {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+}
+
+.hero-destaque-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(233, 196, 106, 0.9);
+    color: var(--cor-texto-claro);
+    font-weight: 500;
+}
+
+.hero-destaque-pill i {
+    font-size: 0.9rem;
+}
+
+/* Seção Saúde Digital em foco (cards menores) */
+.saude-digital-section {
+    margin-top: 3rem;
+}
+
+.saude-digital-section h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.saude-digital-section .subtitulo {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 2.5rem;
+    font-size: 0.98rem;
+    color: var(--cor-texto-secundario);
+}
+
+.saude-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.saude-card {
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 1.7rem 1.5rem;
+    box-shadow: 0 6px 18px var(--cor-sombra);
+    border: 1px solid var(--cor-borda);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.saude-card-icone {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background-color: var(--cor-fundo-leve);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-secundaria);
+    font-size: 1.3rem;
+}
+
+.saude-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+}
+
+.saude-card p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
 /* ==========================================================================
    7. PÁGINA SOBRE (ABOUT)
    ========================================================================== */
